@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from usuarios.forms import LoginForms
+from usuarios.forms import LoginForms, CadastroForms
 
 
 def login(request):
@@ -9,4 +9,5 @@ def login(request):
 
 
 def cadastro(request):
-    return render(request, "usuarios/cadastro.html")
+    form = CadastroForms()
+    return render(request, "usuarios/cadastro.html", {"form": form})
